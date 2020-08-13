@@ -5,7 +5,7 @@ const { validatePost } = require("../middleware/post");
 
 const router = express.Router();
 
-router.post("/api/users", validateUser(), (req, res) => {
+router.post("/api/users", validateUser(), (req, res, next) => {
   users
     .insert(req.body)
     .then((user) => {
